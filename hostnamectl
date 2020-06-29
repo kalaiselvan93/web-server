@@ -6,15 +6,9 @@ pipeline {
 	stages {
 		stage ('hostnamectl') {
 			agent { label 'master' }
-			environment {
-				OS = sh(script: "hostnamectl | grep 'Operating System' | awk \'{print \$2}\' ", ,returnstdout: true).trim()
-				Kernel = sh(script: "hostnamectl | grep 'Kernel' | awk \'{print \$2}\' ", ,returnstdout: true).trim()
-				Architecture = sh(script: "hostnamectl | grep 'Architecture' | awk \'{print \$2}\' ", ,returnstdout: true).trim()
-			}
-			steps {
-				echo "hostnamectl -- $OS, $Kernel, $Architecture"
-				sh 'echo "$OS, $Kernel, $Architecture"'
-			}
+				steps {	
+					sh 'echo "$hostname"'
+				}
 		}
 	}
 }
