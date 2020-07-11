@@ -1,10 +1,8 @@
 pipeline {
 	agent none
 	stages {
-		stage('build'){
-				script {
-					sh 'echo "hello"'
-				}
+		stage('build') {
+			sh 'echo "hello"'
 		}
 	}
 
