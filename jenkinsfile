@@ -1,11 +1,11 @@
-pipeline{
-  agent none
-  stages{
-  	stage('build'){
-		script{
-			sh 'echo "hello"'
+pipeline {
+	agent none
+	stages {
+		stage('build'){
+				script {
+					sh 'echo "hello"'
+				}
 		}
 	}
 
- }
 }
